@@ -8,7 +8,7 @@ ToDoの登録、編集、削除ができます。
 ```
 $ git clone https://github.com/garammasala29/vue-todo-app
 $ cd vue-todo-app
-$ cd open index.html
+$ open index.html
 ```
 ## Author
 - 作成者 garammasala
