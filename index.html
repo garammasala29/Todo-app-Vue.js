@@ -9,39 +9,39 @@
   <article id='app'>
     <header>
       <h1>TODO</h1>
-        <h2>NEW</h2>
-        <form class='new-form'>
+      <h2>NEW</h2>
+      <form class='new-form'>
           <input class='new-todo' type='text' v-model='title'>
           <input class='new-button' value='Add' type='submit' @click='addTodo'>
         </form>
     </header>
-      <section class='todo-index'>
-        <div class='status'>
-          <h2 class='status-title' v-if='done'>DONE LIST</h2>
-          <h2 class='status-title' v-else>TODO LIST</h2>
-          <div class='toggle'>
-            <input type="checkbox" id="switch" @click='switchTodo'>
-            <label for="switch"><span></span></label>
-            <div id="circle"></div>
-          </div>
+    <section class='todo-index'>
+      <div class='status'>
+        <h2 class='status-title' v-if='done'>DONE LIST</h2>
+        <h2 class='status-title' v-else>TODO LIST</h2>
+        <div class='toggle'>
+          <input type='checkbox' id='switch' @click='switchTodo'>
+          <label for='switch'><span></span></label>
+          <div id='circle'></div>
         </div>
-        <table>
-          <tr v-for='todo in getTodos' class='todo-list'>
-            <div class='todo-title'>
-              <td v-if='todo.edit'>
-                <input type='text' class='edit-form' v-model='todo.title' @keypress.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>
-              </td>
-              <td v-else>{{ todo.title }}</td>
-            </div>
-            <td v-if='done'><button class='btn done-button' @click='changeStatus(todo)'>Undo</button></td>
-            <td v-else><button class='btn done-button' @click='changeStatus(todo)'>Done</button></td>
-            <td><button class='btn edit-button' @click='editTodo(todo)'>Edit</button></td>
-            <td><button class='btn delete-button' @click='deleteTodo(todo)'>Delete</button></td>
-          </tr>
-        </table>
-      </section>
-    </article>
-    <p class='footer-text'>&copy;garammasala 2021</p>
+      </div>
+      <table>
+        <tr v-for='todo in getTodos' class='todo-list'>
+          <div class='todo-title'>
+            <td v-if='todo.edit'>
+              <input type='text' class='edit-form' v-model='todo.title' @keypress.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>
+            </td>
+            <td v-else>{{ todo.title }}</td>
+          </div>
+          <td v-if='done'><button class='btn done-button' @click='changeStatus(todo)'>Undo</button></td>
+          <td v-else><button class='btn done-button' @click='changeStatus(todo)'>Done</button></td>
+          <td><button class='btn edit-button' @click='editTodo(todo)'>Edit</button></td>
+          <td><button class='btn delete-button' @click='deleteTodo(todo)'>Delete</button></td>
+        </tr>
+      </table>
+    </section>
+  </article>
+  <p class='footer-text'>&copy;garammasala 2021</p>
   <script src='https://unpkg.com/vue@3.2.23'></script>
   <script src='index.js'></script>
 </body>
