@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #304455;
+  font-family: 'Source Sans Pro','メイリオ','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','ＭＳＰゴシック','MS PGothic';
+  line-height: 2.0;
+  background-color: #42b983;
+}
+
+article {
+  background-color: white;
+  border-radius: 8px;
+  margin: 5px auto;
+  padding: 50px 100px 100px 100px;
+  width: 80%;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+h1 {
+  line-height: 1.8;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.2em
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  border-bottom: solid 0.5px;
+}
+
+input[type='text']:focus {
+  border: 2px solid #304455;;
+  outline: none;
+}
+
+.change-button {
+  width: auto;
+  position: relative;
+  padding: 4px 20px;
+  margin: 0;
+  height: calc(100% - 8px);
+  right: 4px;
+  top: 4px;
+  font-size: 1.05em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  min-width: 8em;
+  display: inline-block;
+  color: #fff;
+  background-color: #304455;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 9999px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table td{
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee
+}
+
+.new-form {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.new-todo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 100px 0px 10px;
+  height: 50px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.new-button {
+  position: absolute;
+  padding: 4px 20px;
+  margin: 0;
+  height: calc(100% - 4px);
+  right: 2px;
+  top: 2px;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: white;
+  background-color: #42b983;
+  border: 1px solid;
+  border-radius: 9999px;
+}
+
+.edit-form {
+  position: relative;
+  width: 85%;
+  padding: 0 10px;
+  height: 50px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 1rem 1rem;
+  color: #304455;
+  border-color: #304455;
+  border-bottom: 5px solid #304455;
+  border-radius: 0.8rem;
+}
+
+.btn:hover {
+  margin-top: 3px;
+  color: #304455;
+  border-bottom: 2px solid #304455
+}
+
+.done-button {
+  background-color: #f4a261;
+}
+
+.edit-button {
+  background-color: #42b983;
+}
+
