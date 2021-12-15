@@ -29,7 +29,7 @@
           <tr v-for='todo in getTodos' class='todo-list'>
             <div class='todo-title'>
               <td v-if='todo.edit'>
-                <input type='text' class='edit-form' v-model='todo.title' @keyup.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>
+                <input type='text' class='edit-form' v-model='todo.title' @keypress.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>
               </td>
               <td v-else>{{ todo.title }}</td>
             </div>
