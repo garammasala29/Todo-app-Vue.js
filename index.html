@@ -16,10 +16,15 @@
         </form>
     </header>
       <section class='todo-index'>
-        <h2 v-if='done'>Done</h2>
-        <h2 v-else>ToDo</h2>
-        <button class='change-button' @click='switchTodo'>ToDo/Done</button>
-
+        <div class='status'>
+          <h2 class='status-title' v-if='done'>DONE LIST</h2>
+          <h2 class='status-title' v-else>TODO LIST</h2>
+          <div class='toggle'>
+            <input type="checkbox" id="switch" @click='switchTodo'>
+            <label for="switch"><span></span></label>
+            <div id="circle"></div>
+          </div>
+        </div>
         <table>
           <tr v-for='todo in getTodos' class='todo-list'>
             <div class='todo-title'>
@@ -28,7 +33,8 @@
               </td>
               <td v-else>{{ todo.title }}</td>
             </div>
-            <td><button class='btn done-button' @click='changeStatus(todo)'>Done</button></td>
+            <td v-if='done'><button class='btn done-button' @click='changeStatus(todo)'>Undo</button></td>
+            <td v-else><button class='btn done-button' @click='changeStatus(todo)'>Done</button></td>
             <td><button class='btn edit-button' @click='editTodo(todo)'>Edit</button></td>
             <td><button class='btn delete-button' @click='deleteTodo(todo)'>Delete</button></td>
           </tr>
