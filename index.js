@@ -74,10 +74,14 @@ const app = Vue.createApp({
     }
   },
   computed: {
-    getTodos () {
-      const array = this.todos.filter(todo => this.done === todo.done)
-      array.sort((a, b) => { return b.id - a.id })
-      return array
+    todoList () {
+      return this.todos.filter(todo => this.done === todo.done).sort((a, b) => b.id - a.id)
+    },
+    statusTitle () {
+      return this.done ? 'DONE LIST' : 'TODO LIST'
+    },
+    buttonLabel () {
+      return this.done ? 'Undo' : 'Done'
     }
   }
 })
