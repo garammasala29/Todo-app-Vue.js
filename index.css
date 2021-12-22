@@ -117,6 +117,7 @@ table tr:nth-child(odd){
   height: 40px;
   border: 2px solid #ccc;
   border-radius: 9999px;
+  cursor: pointer;
 }
 
 .toggle input[type='checkbox']:checked +label {
@@ -174,7 +175,8 @@ table tr:nth-child(odd){
 .btn:hover {
   margin-top: 3px;
   color: #304455;
-  border-bottom: 2px solid #304455
+  border-bottom: 2px solid #304455;
+  cursor: pointer;
 }
 
 .done-button {
