@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset='UTF-8'>
+  <title>ToDo App (Vue.js)</title>
+  <link rel='stylesheet' href='index.css'>
+</head>
+<body>
+  <article id='app'>
+    <header>
+      <h1>TODO</h1>
+      <h2>NEW</h2>
+      <form class='new-form'>
+          <input class='new-todo' type='text' v-model='title'>
+          <input class='new-button' value='Add' type='submit' @click='addTodo'>
+        </form>
+    </header>
+    <section class='todo-index'>
+      <div class='status'>
+        <h2 class='status-title'>{{ statusTitle }}</h2>
+        <div class='toggle'>
+          <input type='checkbox' id='switch' @click='switchTodo'>
+          <label for='switch'><span></span></label>
+          <div id='circle'></div>
+        </div>
+      </div>
+      <table>
+        <tr v-for='todo in doneTodos' class='todo-list'>
+          <div class='todo-title'>
+            <td v-if='todo.edit'>
+              <input type='text' class='edit-form' v-model='todo.title' @keypress.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>
+            </td>
+            <td v-else>{{ todo.title }}</td>
+          </div>
+          <td><button class='btn done-button' @click='changeStatus(todo)'>{{ buttonLabel }}</button></td>
+          <td><button class='btn edit-button' @click='editTodo(todo)'>Edit</button></td>
+          <td><button class='btn delete-button' @click='deleteTodo(todo)'>Delete</button></td>
+        </tr>
+      </table>
+    </section>
+  </article>
+  <p class='footer-text'>&copy;garammasala 2021</p>
+  <script src='https://unpkg.com/vue@3.2.23'></script>
+  <script src='index.js'></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #304455;
+  font-family: 'Source Sans Pro','メイリオ','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','ＭＳＰゴシック','MS PGothic';
+  line-height: 2.0;
+  background-color: #42b983;
+}
+
+article {
+  background-color: white;
+  border-radius: 8px;
+  margin: 5px auto;
+  padding: 50px 100px 100px 100px;
+  width: 80%;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+h1 {
+  line-height: 1.8;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.2em
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 0;
+  border-bottom: solid 0.5px;
+  letter-spacing: 2px;
+}
+
+input[type='text']:focus {
+  border: 2px solid #304455;;
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table td{
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee
+}
+
+.new-form {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.new-todo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 100px 0px 10px;
+  height: 50px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.new-button {
+  position: absolute;
+  padding: 4px 20px;
+  margin: 0;
+  height: calc(100% - 4px);
+  right: 2px;
+  top: 2px;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: white;
+  background-color: #42b983;
+  border: 1px solid;
+  border-radius: 9999px;
+}
+
+.status-title {
+  display: inline-block;
+  border: none;
+  margin-right: 20px;
+}
+
+.toggle {
+  display: inline-block;
+  line-height: 34px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  width: 130px;
+  background: #fff;
+}
+
+.toggle input[type='checkbox'] {
+  display: none;
+}
+
+.toggle label {
+  display: block;
+  box-sizing: border-box;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.toggle input[type='checkbox']:checked +label {
+  border-color: #ccc;
+}
+
+.toggle label span:after{
+  content: 'Done';
+  padding: 0 0 0 45px;  color: #304455;
+}
+
+.toggle  input[type='checkbox']:checked + label span:after{
+  content: 'ToDo';
+  padding: 0 40px 0 0;
+  color: #42b983;
+}
+
+.toggle #circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #304455;
+  top: -5px;
+  left: 0;
+  border-radius: 9999px;
+  border: 5px solid #42b983;
+  transition: .2s;
+}
+
+.toggle input[type='checkbox']:checked ~ #circle {
+  transform: translateX(80px);
+  background: #42b983;
+  border: 5px solid #304455;
+}
+
+.edit-form {
+  position: relative;
+  width: 85%;
+  padding: 0 10px;
+  height: 50px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 1rem 1rem;
+  color: #304455;
+  border-color: #304455;
+  border-bottom: 5px solid #304455;
+  border-radius: 0.8rem;
+}
+
+.btn:hover {
+  margin-top: 3px;
+  color: #304455;
+  border-bottom: 2px solid #304455;
+  cursor: pointer;
+}
+
+.done-button {
+  background-color: #f4a261;
+}
+
+.edit-button {
+  background-color: #42b983;
+}
