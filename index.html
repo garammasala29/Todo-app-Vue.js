@@ -25,7 +25,7 @@
         </div>
       </div>
       <table>
-        <tr v-for='todo in todoList' class='todo-list'>
+        <tr v-for='todo in doneTodos' class='todo-list'>
           <div class='todo-title'>
             <td v-if='todo.edit'>
               <input type='text' class='edit-form' v-model='todo.title' @keypress.enter='doneEdit(todo)' @blur='doneEdit(todo)' ref='todoTitle'>

@@ -70,7 +70,7 @@ const app = Vue.createApp({
     }
   },
   computed: {
-    todoList () {
+    doneTodos () {
       return this.todos.filter(todo => this.done === todo.done).sort((a, b) => b.id - a.id)
     },
     statusTitle () {
