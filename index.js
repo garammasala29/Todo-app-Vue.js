@@ -23,14 +23,6 @@ const app = Vue.createApp({
     }
     return data
   },
-  watch: {
-    todos: {
-      handler (todos) {
-        todoStorage.save(todos)
-      },
-      deep: true
-    }
-  },
   methods: {
     addTodo () {
       this.title = this.title.trim()
@@ -43,6 +35,7 @@ const app = Vue.createApp({
         done: false,
         edit: null
       })
+      todoStorage.save(this.todos)
       this.title = ''
     },
     switchTodo () {
@@ -50,9 +43,11 @@ const app = Vue.createApp({
     },
     changeStatus (todo) {
       todo.done = !todo.done
+      todoStorage.save(this.todos)
     },
     deleteTodo (todo) {
       this.todos.splice(this.todos.indexOf(todo), 1)
+      todoStorage.save(this.todos)
     },
     editTodo (todo) {
       todo.edit = !todo.edit
@@ -67,6 +62,7 @@ const app = Vue.createApp({
       if (!todo.title) {
         this.cancelEdit(todo)
       }
+      todoStorage.save(this.todos)
     },
     cancelEdit (todo) {
       todo.title = this.beforeEdit
